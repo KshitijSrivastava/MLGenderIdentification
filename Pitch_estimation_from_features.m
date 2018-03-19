@@ -16,15 +16,23 @@ end
 
 features(:,1)=classification; %Replacing the the pitch as a features with classification
 
-modelfun=@(b,x)b(1) + b(2)*features(:,1) + b(3)*features(:,2) + b(4)*features(:,3);
+% sub_features=features(:,1:3);
 
-beta0=[10,10,10,10];
+% modelfun=@(b,x)b(1) + b(2)*sub_features(:,1) + b(3)*sub_features(:,2) + b(4)*sub_features(:,3);
+% 
+% beta0=[10,10,10,10];
 
-mdl=fitnlm(features,pitch,modelfun,beta0);
+%mdl=fitnlm(sub_features,pitch,modelfun,beta0);
+mdl = fitlm(features,pitch,'linear','RobustOpts','on')
 
-X_newdata=[1,0.0642412677031359,0.0320269133725820,0.0150714886459209,0.0901934398654331,0.0751219512195122,12.8634618371626,274.402905502067,0.893369416700807,0.491917766397811,0,0.0597809849598081,0.0842791064403210,0.0157016683022571,0.275862068965517,0.00781250000000000,0.00781250000000000,0.00781250000000000,0,0];
+pitch(:,2)=0;
+for i=1:3168
+    X_newdata=features(i,:);
+    pitch(i,2) = predict(mdl,X_newdata);
+    
+end
 
-pitch_new = predict(mdl,X_newdata);
+
 
 %%
 load carbig
