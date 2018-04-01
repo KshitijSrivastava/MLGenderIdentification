@@ -14,6 +14,30 @@ for i=1:20 %matrix which has normalized features
     normalized_features(:,i)=features(:,i)/max_features(i);
 end
 
+mean_features=zeros(1,20);
+for i=1:20 %Finding the mean of the features
+    mean_features(i)=mean(features(:,i));
+end
+
+std_features=zeros(1,20);
+for i=1:20 %matrix which has standard deviation of the features
+    std_features(i)=std(features(:,i));
+end
+
+for i=1:20
+    Ndata(:,i)=(features(:,i)-mean_features(i))/std_features(i);%Normalizing the features (X-u)/std
+end
+
+Correlation_matrix=corr(Ndata);
+
+%%
+pdf_features=zeros(3168,20);
+for i=1:20 %Creating a standard normal object
+    mu = mean_features(i);
+    sigma = sdx_features(i);
+    pd = makedist('Normal',mu,sigma);
+    pdf_features(:,i)=pdf(pd,features(:,i));
+end
 
 mdl=fitcknn(features,outputs);
 mdl.NumNeighbors = 3;
