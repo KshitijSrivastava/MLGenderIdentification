@@ -122,3 +122,11 @@ for i=1:3168
 end
 
 %%
+
+correlation_mat=zeros(200,200);
+% 
+% for i=1:20
+%     for j=1:20
+%         num=
+%     end
+% end
