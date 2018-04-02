@@ -108,15 +108,17 @@ Norm_male=horzcat(Norm_male,male(:,21));
 % X=Norm_male;
 % d1 = mahal(Y,X);
 
-mahabalonis_dist_male=zeros(20);
-mahabalonis_dist_female=zeros(20);
+mahabalonis_dist_male=zeros(1,row_m);
+mahabalonis_dist_female=zeros(1,row_f);
 
-
-for i=1:col
-    mahabalonis_dist_male(i) = mahal(Norm_female(i,:),Norm_male);
-	mahabalonis_dist_female(i) = mahal(Norm_female(i,:),Norm_female);
+for i=1:row_f
+    mahabalonis_dist_female(i) = mahal(Norm_female(i,:),Norm_female);
 end
 
+for i=1:row_m
+        mahabalonis_dist_male(i) = mahal(Norm_male(i,:),Norm_male);
+end
+%%
 outlier_male=[];
 for i=1:col
 	if mahabalonis_dist_male(i)>100 %Some threshold
