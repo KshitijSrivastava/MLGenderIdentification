@@ -108,5 +108,30 @@ All the three test used here gives us similar results. Based on this, the most i
 - Standard Deviation
 - Spectral Entropy
 
+### CORRELATION
 
+2 Figures will be attached here
+
+The above figures shows that some of the variables have very high correlation which is more than 0.8 (Fig 4), such as meanfreq, centroid, Q25, standard deviation, median, spectral flatness, maximum dominant frequency, range of dominant frequency and skew. Features having high correlation gives redundant data and hence can be eliminated without much loss of information. Out of two highly related features, the one having higher variance with other features is eliminated.Due to the high correlation among variables, we used PCA to reduce the dimensions.
+
+### STATISTICAL MEASURES
+
+Figure will be attached 
+
+We have performed various statistical techniques on our raw dataset and observed that the range of features are quite different. Some features such as feature-7 has a very large range, This will cause problem while using distance based techniques due to non-uniformity. Therefore scaling of features is need of the hour, and also for applying PCA one has to do mean normalization and scaling. 
+
+## NORMALIZATION
+
+Some machine learning algorithms based on the gradient descent or on distance measures like KNN are quite sensitive to the scale of the numeric values provided. Consequently, in order for the algorithm to converge faster or to provide a more exact solution, rescaling the distribution is necessary. Rescaling mutates the range of the values of the features and can affect variance, too. Hence Normalization becomes a very important step in data preprocessing. These can be done by using various statistical standardization like z-score normalization,min-max transformation, division by max value etc.
+
+- Z-score normalization
+It is  to center the mean to zero (by subtracting the mean) and then divide the result by the standard deviation.
+                                               
+- The min-max transformation 
+This is to remove the minimum value of the feature and then divide by the range (maximum value - minimum value). This act rescales all the values between 0 to 1. It’s preferred to standardization when the original standard deviation is too small original values are too near or when you want to preserve the zero values in a sparse matrix.
+
+- Division by max value 
+It is basically dividing the whole feature dataset by its maximum value this process also rescales all the value between 0 to 1.
+
+After applying all the above stated normalization techniques we have used the new normalized from each of the three techniques on the ML algorithm and found that all the mentioned techniques are giving equivalent results while Z-score normalization being slightly better off than rest.
 
