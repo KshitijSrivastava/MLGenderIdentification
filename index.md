@@ -73,3 +73,40 @@ Range of dominant frequency measured across acoustic signal.
 20. Modulation index (modindx)
 Calculated as the accumulated absolute difference between adjacent measurements of fundamental frequencies divided by the frequency range. It describes by how much
 the modulated variable of the carrier signal varies around its unmodulated level.
+
+## DATA & PREPROCESSING
+
+Figure 1 will come here
+
+From Fig 1, we can see that the number of female and male samples are the same, indicating that there is no unbalanced problem in our dataset.
+
+Figure 2 will come here
+
+ In Fig 2.we have plotted the PDF function of every male and female data points present in the database for a particular feature against each other. We can observe that there is more overlap region in the distribution plots of features like centroid, meanfreq, minfun, modindx and Q75.  In addition, the distribution plots of features like IQR, meanfun, mode, Q25, sd have less overlap region i.e the values are more scattered[4].The features having less overlap region are more important features since they show greater variation in data which will be of great use in predicting the gender of the given instance. We can also analyze that as the overlap region between male & female instance of a particular feature increases the redundancy of the data from that particular feature also increases,this point is also supported by the analysis done further in the project.
+
+Figure 3 will come here
+
+The feature importance is shown in Fig 3. is extracted using three different methods i.e Bhattacharyya distance,Entropy,t-test.
+
+### Bhattacharyya Distance
+
+Bhattacharyya Distance measures the similarity of two discrete or continuous probability distributions. Bhattacharyya coefficient is a measure of the amount of overlap between two statistical samples or populations.Higher the value of Bhattacharyya Distance less is the overlap region[7].It can be seen from the plot above that meanfun, IQR, Q25 are the three most significant attributes in the dataset. The lower value of the Bhattacharyya distance indicates the data quite overlap each other while the higher value of it indicates that the pdf for male and female are quite apart and is an important features for classification
+
+### Kullback –Leibler divergence
+
+This is a measure of how one probability distribution diverges from a second probability distribution.It is widely used in characterizing the relative (Shannon) entropy in information systems, randomness in continuous time-series, etc. A Kullback–Leibler divergence of 0 indicates that we can expect similar behavior of two different distributions, while a Kullback–Leibler divergence of 1 indicates that the two distributions behave in such a different manner[8].
+
+### T tests
+
+In our binary classification problem,each sample is classified either into class C1 or class C2. t-Statistics[11] helps us to evaluate that whether the values of a particular feature for class C1 is significantly different from values of same feature for class C2. If this holds, then the feature can help us to better differentiate our data.
+
+All the three test used here gives us similar results. Based on this, the most important 5 features of our dataset are selected 
+
+- Mean Frequency
+- Inter-Quantile Range
+- Q25
+- Standard Deviation
+- Spectral Entropy
+
+
+
