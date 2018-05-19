@@ -135,3 +135,22 @@ It is basically dividing the whole feature dataset by its maximum value this pro
 
 After applying all the above stated normalization techniques we have used the new normalized from each of the three techniques on the ML algorithm and found that all the mentioned techniques are giving equivalent results while Z-score normalization being slightly better off than rest.
 
+## OUTLIERS
+
+An outlier is an observation that diverges from an overall pattern on a dataset. We know that Machine learning algorithms are very sensitive to the range and distribution of these values. Here outliers can play spoilsport and mislead the training process resulting in longer training times, less accurate models and ultimately poorer results. Hence it becomes necessary for us to remove outliers. They are of two kinds: Univariate and multivariate. Univariate outliers can be found when looking at a distribution of values in a single feature space. Multivariate outliers can be found in a n-dimensional space (of n-features). We have multivariate data here. Many univariate outlier detection methods can be extended to handle multivariate data. The central idea is to transform the multivariate outlier detection task into a univariate outlier detection problem. Here we have used Mahalanobis distance and chi-square statistic for multivariate outlier detection. The method gives a univariate variable, and thus univariate tests such as Grubb’s test,interquartile range method,3-sigma method can be applied to this measure.
+
+### Mahalanobis distance [5][6]
+It is a measure of the distance between a point P and a distribution D, It is a multi-dimensional generalization of the idea of measuring how many standard deviations away P is from the mean of D. This distance is zero if P is at the mean of D, and grows as P moves away from the mean along each principal component axis, it measures the number of standard deviations from P to the mean of D. Mahalanobis distance is unitless and scale-invariant, and takes into account the correlations of the data set.
+Using this method we get a univariate in which for checking  outlier we have set the threshold  as 97.5% Quantile of chi-square distribution[12].
+
+### chi-square test [6]
+It is a statistical test of independence to determine the dependency of two variables[13]. From the definition, of chi-square we can easily deduce the application of chi-square technique in feature selection. We have a target variable from the dataset of a feature and mean variable being the mean of the data points of the feature from which we select target variable. Now, we calculate chi-square statistics between every mean variable and the target variable and observe the existence of a relationship between the mean variables and the target[14]. Larger the chi-square statistic, the target/object is an outlier in our case above 97.5%[15]
+
+### Grubbs’ Test [6] 
+It is maximum normalized residual test or extreme studentized deviate test, is a statistical test used to detect outliers in a univariate data set  of a normally distributed population. Here we used the grubbs’ test by converting the multivariate data into a univariate data by mahalanobis distance and then used it on grub’s test. Grubbs' test detects one outlier at a time. This method will continue to run until all the outliers are removed from the dataset. Grubbs' test is defined for the hypothesis:
+
+### Interquartile range method
+We process the data using the above method, here we observe that if the value of the given data is less than the value of Q25-1.5*IQR or greater than that of  Q75+1.5*IQR, then we classify it as an outlier[6]. Where Q25 is 1st quartile, Q75 is the 3rd quartile and IQR is interquartile range and the outliers are detected.
+
+### 3 sigma method
+In this we basically observe that if the data value is greater or lesser than the distance from the mean of the features to three times its standard deviation value,then it is classified as a outlier.
