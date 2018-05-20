@@ -154,3 +154,29 @@ We process the data using the above method, here we observe that if the value of
 
 ### 3 sigma method
 In this we basically observe that if the data value is greater or lesser than the distance from the mean of the features to three times its standard deviation value,then it is classified as a outlier.
+
+
+Box plot figure will come here
+
+Here on the each box, the central mark indicates the median, and the bottom and top edges of the box indicate the 25th and 75th percentiles, respectively. The whiskers extend to the most extreme data points not considered outliers, and the outliers are plotted using the '+' symbol.
+As shown in the Figure 5, we see that for the normalized data, some of the samples across all the features are lying in the outlier region
+
+Box plot after outlier removal system
+
+By comparison of number of red crosses present in the Fig 5 with the red crosses present in Fig 6 we can clearly observe that lot of outliers (in features) have been taken care of, but some outliers are still present in Fig 6,which are restricted to a small number of features and are heavily concentrated near the boundary of the outlier removal. 
+
+Here employing univariate method for detecting outlier such as IQR(box plot) as used above is not a right practice since the data is multivariate and we may be losing some valuable information. The data point which may seem like an outlier when just looking at univariate feature may actually not be an outlier when seen in n-dimensional plane where ‘n’ is the number of features.
+
+Outlier detection table will come here
+
+
+## Clustering analysis  and outlier detection:
+K-means clustering is a type of unsupervised learning which is used to find groups which have not been explicitly labeled in the data.The goal of this algorithm is to find groups in the data, with the number of groups represented by the variable K. The algorithm works iteratively to assign each data point to one of K groups based on the features that are provided. Data points are clustered based on feature similarity[16]. The results of the K-means clustering algorithm are:
+
+1. The centroids of the K clusters, which can be used to label new data
+2. Labels for the training data (each data point is assigned to a single cluster)
+
+
+Rather than defining groups before looking at the data, clustering allows one to find and analyze the groups that have formed organically. It helps in identifying unknown groups in complex data set. Once the algorithm has been run and the groups are defined, any new data can be easily assigned to the correct group. This is a versatile algorithm that can be used for any type of grouping. To find the number of clusters in the data, the user needs to run the K-means clustering algorithm for a range of K values and compare the results. A commonly used method to compare results across different values of K is the mean distance between data points and their cluster centroid. Mean distance to the centroid as a function of K is plotted and the "elbow point," where the rate of decrease sharply shifts and then does not change much, it can be used to roughly determine K. Here K=2 seems to be the right choice.The silhouette method may also be used for validating K.To get an idea of how well-separated the resulting clusters are, one can make a silhouette plot using the cluster indices output from kmeans. The silhouette plot displays a measure of how close each point in one cluster is to points in the neighboring clusters. This measure ranges from +1, indicating points that are very distant from neighboring clusters, through 0, indicating points that are not distinctly in one cluster or another, to -1, indicating points that are probably assigned to the wrong cluster. Average silhouette value for k=2 is 0.4599 and that for k=3 is 0.2774. Therefore K=2 is the choice for the number of clusters.                                                                                                                                     This clustering method is also used for finding outliers in the dataset. The points which are very far located in the cluster may be considered as outlier. We are getting 72 outliers using this clustering method.
+
+Silhoutte image will come here
