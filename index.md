@@ -119,7 +119,7 @@ The above figures shows that some of the variables have very high correlation wh
 
 ### STATISTICAL MEASURES
 
-Figure will be attached 
+![Statistical Data of the Dataset](/images/Stats.PNG)
 
 We have performed various statistical techniques on our raw dataset and observed that the range of features are quite different. Some features such as feature-7 has a very large range, This will cause problem while using distance based techniques due to non-uniformity. Therefore scaling of features is need of the hour, and also for applying PCA one has to do mean normalization and scaling. 
 
