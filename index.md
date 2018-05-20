@@ -159,12 +159,12 @@ We process the data using the above method, here we observe that if the value of
 In this we basically observe that if the data value is greater or lesser than the distance from the mean of the features to three times its standard deviation value,then it is classified as a outlier.
 
 
-Box plot figure will come here
+![Box Plot before Outlier Removal](/images/boxplot_with_outlier.PNG)
 
 Here on the each box, the central mark indicates the median, and the bottom and top edges of the box indicate the 25th and 75th percentiles, respectively. The whiskers extend to the most extreme data points not considered outliers, and the outliers are plotted using the '+' symbol.
 As shown in the Figure 5, we see that for the normalized data, some of the samples across all the features are lying in the outlier region
 
-Box plot after outlier removal system
+![Box Plot after Outlier Removal](/images/boxplot_after_outlier_mean_iqr.PNG)
 
 By comparison of number of red crosses present in the Fig 5 with the red crosses present in Fig 6 we can clearly observe that lot of outliers (in features) have been taken care of, but some outliers are still present in Fig 6,which are restricted to a small number of features and are heavily concentrated near the boundary of the outlier removal. 
 
