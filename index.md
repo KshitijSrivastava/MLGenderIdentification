@@ -170,8 +170,7 @@ By comparison of number of red crosses present in the Fig 5 with the red crosses
 
 Here employing univariate method for detecting outlier such as IQR(box plot) as used above is not a right practice since the data is multivariate and we may be losing some valuable information. The data point which may seem like an outlier when just looking at univariate feature may actually not be an outlier when seen in n-dimensional plane where ‘n’ is the number of features.
 
-Outlier detection table will come here
-
+![Oulier Detection Table](/images/Outlier_removal_table.JPG)
 
 ## Clustering analysis  and outlier detection:
 K-means clustering is a type of unsupervised learning which is used to find groups which have not been explicitly labeled in the data.The goal of this algorithm is to find groups in the data, with the number of groups represented by the variable K. The algorithm works iteratively to assign each data point to one of K groups based on the features that are provided. Data points are clustered based on feature similarity[16]. The results of the K-means clustering algorithm are:
