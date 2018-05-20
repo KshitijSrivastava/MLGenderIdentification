@@ -180,3 +180,115 @@ K-means clustering is a type of unsupervised learning which is used to find grou
 Rather than defining groups before looking at the data, clustering allows one to find and analyze the groups that have formed organically. It helps in identifying unknown groups in complex data set. Once the algorithm has been run and the groups are defined, any new data can be easily assigned to the correct group. This is a versatile algorithm that can be used for any type of grouping. To find the number of clusters in the data, the user needs to run the K-means clustering algorithm for a range of K values and compare the results. A commonly used method to compare results across different values of K is the mean distance between data points and their cluster centroid. Mean distance to the centroid as a function of K is plotted and the "elbow point," where the rate of decrease sharply shifts and then does not change much, it can be used to roughly determine K. Here K=2 seems to be the right choice.The silhouette method may also be used for validating K.To get an idea of how well-separated the resulting clusters are, one can make a silhouette plot using the cluster indices output from kmeans. The silhouette plot displays a measure of how close each point in one cluster is to points in the neighboring clusters. This measure ranges from +1, indicating points that are very distant from neighboring clusters, through 0, indicating points that are not distinctly in one cluster or another, to -1, indicating points that are probably assigned to the wrong cluster. Average silhouette value for k=2 is 0.4599 and that for k=3 is 0.2774. Therefore K=2 is the choice for the number of clusters.                                                                                                                                     This clustering method is also used for finding outliers in the dataset. The points which are very far located in the cluster may be considered as outlier. We are getting 72 outliers using this clustering method.
 
 Silhoutte image will come here
+
+## DATA SPLIT 
+
+We first randomly shuffle the data and then split the dataset into three parts:70% as training data, 15% of data for cross validation and remaining 15% as testing data. Training set is used to train a model, basically testing different algorithms and finding the best model to predict the outcomes then this model is applied on the cross validation dataset for tuning it before finalizing it for final testing, through this process we can improve the efficiency of the model by adjusting the trained model based on our observation and results we get for better accuracy and the testing set, fixed  for the final testing of the most optimal algorithm, remained unused until that step.
+In cross validation lower K is usually cheaper and more biased. Larger K is more expensive,  less biased, but can suffer from large variability. This is often cited with the conclusion to use k=10 [18].
+
+Accuracy and outlier removal table will come here
+
+## Models
+We propose to train the conventional models to learn the task of classifying male and female voice samples. The models we chose are as follows:
+1. Logistic Regression
+2. K Nearest Neighbors
+3. Naive Bayes
+4. Linear SVM
+5. Neural Network
+
+Full Feature Set 
+We trained all the models mentioned above on the dataset containing all the 20 features.
+
+Handpicking Top features
+We have picked the top five features analyzed in Important Feature section above.
+
+Reducing Dimensionality by using PCA
+Reducing the dimensionality by using the PCA with variance 95%, with data reducing to 10 features.
+
+## PCA
+Principal Component Analysis (PCA) is a technique in which correlations are found in features and the top performing features are extracted by applying orthogonal transformation on linearly uncorrelated variables called ’Principal Components’. PCA actually selects a linear combination of features and uses them as the new features. These new features can then be used to train the models. The number of principal components will depend upon the threshold of eigenvalues.
+Here, by taking 12 principal components we are able to get a variance in data greater than 0.95 (on a scale of 0 to 1) and the prediction accuracy of about 96 to 97 % for KNN classifier (sensitivity:0.984,specificity:0.95). It has been used to reduce dimensionality and to avoid redundancy in data. 
+
+## Classification Models
+
+### Logistic Regression
+It’s is a machine learning algorithm for classification. In this algorithm, the probabilities describing the possible outcomes of a single trial are modelled using a logistic function. Compared with other classification algorithms, it is more robust: the independent variables do not have to be normally distributed, or have equal variance in each group.In our model, we used 10 fold cross validation to seek out the optimal parameters. 
+
+### KNN
+
+KNN is an instance-based learning, where the function is only approximated locally and all
+computations are deferred until classification. It calculates the biggest number of the label of
+a data point’s K-Nearest Neighbor and assigns the point’s label as the biggest number one.
+KNN is effective when using a large-size of data and it is robust to outliers. Here we have taken k=3, since at this value of k we are getting optimum result.[20] 
+
+### Naive Bayes Classifier
+
+It is a classification technique based on Bayes Theorem with an assumption of independence among predictors. In simple terms, a Naive Bayes classifier assumes that the presence of a particular feature in a class is unrelated to the presence of any other feature. Even if these features depend on each other or upon the existence of the other features, all of these properties independently contribute to the probability.
+
+### SVM
+In SVM, we solve an optimization problem i.e. to maximize the minimum distance of support
+vectors from the separator. We have a budget which allows the data to be misclassified i.e. on
+wrong side of the margin or hyperplane/separator. We have a constraint that prohibits on the
+number of misclassifications. This is called normalizing the betas or budget constraint.
+In our code, the first thing that clicks mind here now is using SVM with linear and radial basis function kernels[21]. We use cross validation to identify the penalty (lambda), for the misclassifications. We performed 10 fold cross validation to identify the best lambda. This lambda is identified by the cost parameter of box function taken as 1 identified using radial basis function.[19] 
+
+### Neural Network
+A neural network consists of units (neurons), arranged in layers, which convert an input vector into some output. Each unit takes an input, applies a (often nonlinear) function to it and then passes the output on to the next layer. Generally the networks are defined to be feed-forward: a unit feeds its output to all the units on the next layer, but there is no feedback to the previous layer. Weightings are applied to the signals passing from one unit to another, and it is these weightings which are tuned in the training phase to adapt a neural network to the particular problem at hand.[17]
+
+
+## CONCLUSION 
+Our dataset is balanced one with no missing value. It neither has high bias problem nor high variance problem. It is separable using a linear decision boundary.Each technique applied by us gave us good result, we consider there performance to be highly satisfactory.We have also performed Feature selection in our dataset, basically it is different from dimensionality reduction. Both methods seek to reduce the number of attributes in the dataset, but a dimensionality reduction method do so by creating new combinations of attributes, where as feature selection  exclude attributes present in the data. Feature selection methods can be used to identify and remove irrelevant and redundant attributes from data that do not contribute to the accuracy of a predictive model. However, feature selection may cause some loss of information, as a result accuracy may somewhat reduce. Among all data preprocessing techniques applied we found Z score to be optimum for normalization, as it not only does mean normalisation but also scales the data which is essential in scale sensitive algorithms like KNN,PCA etc. Certain redundancy is observed in the features, to get rid of this PCA has been used which reduces the dimension, by giving uncorrelated principal components. Here the dimensionality is reduced without compromising much on the accuracy.
+
+It has also been observed that the outliers removal leads to loss of data which can worsen the dataset on which it has been applied. So outliers removal is like a double edged sword which can either improve  or worsen the dataset. Therefore, careful examination is required before labelling any data point as an outlier. We have applied multivariate outlier removal techniques like chi-square and Mahalanobis distance for reasons mentioned earlier (in outlier section). It is strongly felt that better & cleaner dataset beats the fancier algorithm. 
+
+Applying various algorithms we get the following results:
+
+Paste the results photo
+
+REFERENCES
+
+1. https://www.kaggle.com/primaryobjects/voicegender
+
+2. Gender Recognition using Voice by Vineet Ahirkar, Naveen Bansal, CS, UMBC,1000 Hilltop Cir, Baltimore,
+MD 21250,Copyright c 2017, Association for the Advancement of Artificial
+Intelligence (www.aaai.org)
+
+3. Understanding Machine Learning: From Theory to Algorithms by Shai Shalev-Shwartz and Shai Ben-David
+
+4. James Gareth, Daniela Witten, and Trevor Hastie. "An Introduction to Statistical Learning: With Applications in R." (2014)
+
+5. Shiming Xiang, Feiping Nie, Changshui Zhang, Learning a Mahalanobis distance metric for data clustering and classification
+
+6. Data Mining-Concepts and Techniques(Authors: Jiawei Han Micheline Kamber Jian Pei) -Book
+
+7. Xuan Guorong, Chai Peiqi and Wu Minhui, "Bhattacharyya distance feature selection," Proceedings of 13th International Conference on Pattern Recognition
+
+8. Howard Hua Yang and John Moody, Data Visualization and Feature Selection: New Algorithms for  Non Gaussian Data
+
+9. I Guyon , A Elisseeff, An Introduction to Variable and Feature Selection ,Journal of Machine Learning Research 
+
+10. Improving k-means by outlier removal, ACM
+
+11.   https://www.sciencedirect.com/science/article/pii/S1532046411000037
+
+12. http://stat.ethz.ch/education/semesters/ss2012/ams/slides/v2.2.pdf
+
+13. RG Garrett, The chi-square plot: a tool for multivariate outlier recognition, Journal of Geochemical Exploration
+
+14. J. Han, M. Kamber and J. Pei, Data Mining - Concepts and Techniques, 3rd ed., Amsterdam: Morgan Kaufmann Publishers, 2012.
+
+15.Duarte Silva, A.P., Filzmoser, P. & Brito, P. Adv Data Anal Classif (2017). https://doi.org/10.1007/s11634-017-0305-y
+
+16.Hautamäki, Ville & Drapkina, Svetlana & Kärkkäinen, Ismo & Kinnunen, Tomi & Fränti, Pasi. (2005). Improving K-Means by Outlier Removal. 3540. 978-987. 10.1007/11499145_99. 
+
+17. DE Rumelhart, GE Hinton, RJ Williams,Learning representations by back-propagating errors
+
+18. A Study of Cross-Validation and Bootstrap for Accuracy Estimation and Model Selection- Ron Kohavi (1995)
+
+19. V Vapnik ,C Cortes,Support-vector networks
+
+20. T. Cover, P. Hart, Nearest neighbor pattern classification
+
+21.A Comparison Study of Kernel Functions in the Support Vector Machine
+
+22. MATLAB-documentation, scikit-learn documentation, medium.com , stanford machine learning course & resources.
