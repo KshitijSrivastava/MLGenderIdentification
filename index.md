@@ -110,8 +110,8 @@ All the three test used here gives us similar results. Based on this, the most i
 
 ### CORRELATION
 
-[Correlation Matrix](/images/Capture1.PNG)
-[Correlation Matrix](/images/Capture.PNG)
+![Correlation Matrix](/images/Capture1.PNG)
+![Correlation Matrix](/images/Capture.PNG)
 
 
 
