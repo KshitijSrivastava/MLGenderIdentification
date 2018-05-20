@@ -277,9 +277,9 @@ Intelligence (www.aaai.org)
 
 14. J. Han, M. Kamber and J. Pei, Data Mining - Concepts and Techniques, 3rd ed., Amsterdam: Morgan Kaufmann Publishers, 2012.
 
-15.Duarte Silva, A.P., Filzmoser, P. & Brito, P. Adv Data Anal Classif (2017). https://doi.org/10.1007/s11634-017-0305-y
+15. Duarte Silva, A.P., Filzmoser, P. & Brito, P. Adv Data Anal Classif (2017). https://doi.org/10.1007/s11634-017-0305-y
 
-16.Hautamäki, Ville & Drapkina, Svetlana & Kärkkäinen, Ismo & Kinnunen, Tomi & Fränti, Pasi. (2005). Improving K-Means by Outlier Removal. 3540. 978-987. 10.1007/11499145_99. 
+16. Hautamäki, Ville & Drapkina, Svetlana & Kärkkäinen, Ismo & Kinnunen, Tomi & Fränti, Pasi. (2005). Improving K-Means by Outlier Removal. 3540. 978-987. 10.1007/11499145_99. 
 
 17. DE Rumelhart, GE Hinton, RJ Williams,Learning representations by back-propagating errors
 
@@ -289,6 +289,6 @@ Intelligence (www.aaai.org)
 
 20. T. Cover, P. Hart, Nearest neighbor pattern classification
 
-21.A Comparison Study of Kernel Functions in the Support Vector Machine
+21. A Comparison Study of Kernel Functions in the Support Vector Machine
 
 22. MATLAB-documentation, scikit-learn documentation, medium.com , stanford machine learning course & resources.
