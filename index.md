@@ -76,7 +76,7 @@ the modulated variable of the carrier signal varies around its unmodulated level
 
 ## DATA & PREPROCESSING
 
-Figure 1 will come here
+![Instances of Male and Female](/images/Instances.JPG)
 
 From Fig 1, we can see that the number of female and male samples are the same, indicating that there is no unbalanced problem in our dataset.
 
