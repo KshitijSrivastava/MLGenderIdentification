@@ -110,12 +110,10 @@ All the three test used here gives us similar results. Based on this, the most i
 
 ### CORRELATION
 
-![Correlation Matrix](/images/Capture1.PNG)
 ![Correlation Matrix](/images/Capture.PNG)
 
+![Correlation](/images/Capture2.PNG)
 
-
-2 Figures will be attached here
 
 The above figures shows that some of the variables have very high correlation which is more than 0.8 (Fig 4), such as meanfreq, centroid, Q25, standard deviation, median, spectral flatness, maximum dominant frequency, range of dominant frequency and skew. Features having high correlation gives redundant data and hence can be eliminated without much loss of information. Out of two highly related features, the one having higher variance with other features is eliminated.Due to the high correlation among variables, we used PCA to reduce the dimensions.
 
