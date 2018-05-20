@@ -80,7 +80,7 @@ the modulated variable of the carrier signal varies around its unmodulated level
 
 From Fig 1, we can see that the number of female and male samples are the same, indicating that there is no unbalanced problem in our dataset.
 
-Figure 2 will come here
+![Probablity Density plot of the features for male and female](/images/pdf_plotting.jpg)
 
  In Fig 2.we have plotted the PDF function of every male and female data points present in the database for a particular feature against each other. We can observe that there is more overlap region in the distribution plots of features like centroid, meanfreq, minfun, modindx and Q75.  In addition, the distribution plots of features like IQR, meanfun, mode, Q25, sd have less overlap region i.e the values are more scattered[4].The features having less overlap region are more important features since they show greater variation in data which will be of great use in predicting the gender of the given instance. We can also analyze that as the overlap region between male & female instance of a particular feature increases the redundancy of the data from that particular feature also increases,this point is also supported by the analysis done further in the project.
 
