@@ -245,7 +245,7 @@ It has also been observed that the outliers removal leads to loss of data which 
 
 Applying various algorithms we get the following results:
 
-Paste the results photo
+![Final Results Table](/images/Final_results.png)
 
 ## REFERENCES
 
