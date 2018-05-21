@@ -188,7 +188,7 @@ Rather than defining groups before looking at the data, clustering allows one to
 We first randomly shuffle the data and then split the dataset into three parts:70% as training data, 15% of data for cross validation and remaining 15% as testing data. Training set is used to train a model, basically testing different algorithms and finding the best model to predict the outcomes then this model is applied on the cross validation dataset for tuning it before finalizing it for final testing, through this process we can improve the efficiency of the model by adjusting the trained model based on our observation and results we get for better accuracy and the testing set, fixed  for the final testing of the most optimal algorithm, remained unused until that step.
 In cross validation lower K is usually cheaper and more biased. Larger K is more expensive,  less biased, but can suffer from large variability. This is often cited with the conclusion to use k=10 [18].
 
-Accuracy and outlier removal table will come here
+![Accuracy on Various outlier removal method](/images/KNN_accuracy.JPG)
 
 ## Models
 We propose to train the conventional models to learn the task of classifying male and female voice samples. The models we chose are as follows:
