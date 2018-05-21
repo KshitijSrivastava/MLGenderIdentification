@@ -12,65 +12,65 @@ Another interesting problem we have thought from this dataset is predicting the 
 ## FEATURES
 Features in the dataset were obtained from voice samples which are pre-processed by acoustic analysis in R using the seewave and tuneR packages they are as follows:
 
-1. Mean frequency (meanfreq)
+1. **Mean frequency (meanfreq)**
 Mean normalized frequency of the spectrum of the audio signal, measured in kHz.
 
-2. Standard Deviation of Frequency (sd)
+2. **Standard Deviation of Frequency (sd)**
 Standard deviation measures the amount of variation or dispersion of data values. A low standard deviation indicates that the values are more closer to the mean, whereas a high standard deviation indicates that the values are more spread out.
 
-3. Median Frequency (median)
+3. **Median Frequency (median)**
 Median frequency is the middle value of a dataset and is measured in kHz.
 
-4. First Quantile (Q25)
+4. **First Quantile (Q25)**
 Quantiles are the points dividing range of probability distribution into contiguous intervals with equal probabilities. It is the data value when the standard distribution goes beyond the first threshold. It is measured in kHz.
 
-5. Third Quantile (Q75)
+5. **Third Quantile (Q75)**
 Similar to the first quartile, the third quantile is a data point when the standard deviation reaches the one third of the highest in the range. It is measured in kHz.
 
-6. Interquartile Range (IQR)
+6. **Interquartile Range (IQR)**
 Interquartile Range is the difference between the first (lower) and the third (upper) quartile and is measured in KHz. It is a measure of statistical dispersion.
 
-7. Skewness (skew)
+7. **Skewness (skew)**
 Skewness is a measure of the asymmetry of the probability distribution of a real-valued random variable about its mean. The skewness value can be positive or negative, or even undefined. Skew can be thought to refer to the direction opposite to that where curve appears to be leaning.
 
-8. Kurtosis (kurt)
+8. **Kurtosis (kurt)**
 Kurtosis is a measure of the ”tailedness” of the probability distribution of a real-valued random variable.Similar to skewness, kurtosis is a descriptor of the shape of a probability distribution and just as for skewness,there are different ways of quantifying it for a theoretical distribution and corresponding ways of estimating it from a sample from a population.
 
-9. Spectral Entropy (sp.ent)
+9. **Spectral Entropy (sp.ent)**
 In general, entropy is nothing more than the measure of amount of disorders in a system. Spectrum Entropy tells us how different the distribution of energy is in the system. High value of spectral entropy indicates the existence of a constant similarity of energy (small variations). Low value of spectral entropy indicates high variances and irregularity.
 
-10. Spectral Flatness (sfm)
+10. **Spectral Flatness (sfm)**
 Spectral Flatness is a measure used in digital signal processing to characterize an audio spectrum. It is also known as Wiener entropy. It is typically measured in decibels and provides a way to quantify how noise-like a sound is, as opposed to being tone-like.
 
-11. Mode frequency (mode)
+11. **Mode frequency (mode)**
 Mode frequency is the one occurring most in the entire dataset.
 
-12. Frequency centroid (centroid)
+12. **Frequency centroid (centroid)**
 The frequency centroid is a measure used in digital signal processing to characterize a spectrum. It indicates where the ”center of mass” of the spectrum is. Perceptually, it
 has a robust connection with the impression of ”brightness” of a sound.
 
-13. Mean Frequency (meanfun)
+13. **Mean Frequency (meanfun)**
 Average of fundamental frequency measured across acoustic signal.
 
-14. Minimum frequency (minfun)
+14. **Minimum frequency (minfun)**
 Minimum fundamental frequency measured across acoustic signal.
 
-15. Maximum frequency (maxfun)
+15. **Maximum frequency (maxfun)**
 Maximum fundamental frequency measured across acoustic signal.
 
-16. Average dominant frequency (meandom)
+16. **Average dominant frequency (meandom)**
 Average of dominant frequency measured across acoustic signal.
 
-17. Minimum dominant frequency (mindom)
+17. **Minimum dominant frequency (mindom)**
 Minimum of dominant frequency measured across acoustic signal.
 
-18. Maximum dominant frequency (maxdom)
+18. **Maximum dominant frequency (maxdom)**
 Maximum of dominant frequency measured across acoustic signal.
 
-19. Range of dominant frequency (dfrange)
+19. **Range of dominant frequency (dfrange)**
 Range of dominant frequency measured across acoustic signal.
 
-20. Modulation index (modindx)
+20. **Modulation index (modindx)**
 Calculated as the accumulated absolute difference between adjacent measurements of fundamental frequencies divided by the frequency range. It describes by how much
 the modulated variable of the carrier signal varies around its unmodulated level.
 
